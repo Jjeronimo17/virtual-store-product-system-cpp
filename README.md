@@ -1,60 +1,90 @@
-# Tienda Virtual - Sistema de Gestión de Productos
 
-Sistema de consola desarrollado en C++ para organizar y consultar productos de una tienda virtual. Proyecto académico para la materia de **Estructuras de Datos y Algoritmos**.
+---
 
-## Descripción
+# 🛒 Virtual Store – Product Management System
 
-El programa carga una base de datos de 120 productos desde un archivo de texto y permite al usuario realizar búsquedas, ordenamientos y filtrados a través de un menú interactivo.
+Console-based system developed in **C++** to organize and query products in a virtual store. Academic project for the **Data Structures and Algorithms** course.
 
-## Funcionalidades
+---
 
-- **Buscar producto por nombre:** ordena el catálogo alfabéticamente con QuickSort y localiza el producto mediante búsqueda binaria. La búsqueda es case-insensitive.
-- **Ordenar productos por nombre o precio:** utiliza QuickSort para ordenar el catálogo completo alfabéticamente (A→Z) o por precio (menor a mayor).
-- **Filtrar por categoría:** recorre el catálogo y muestra únicamente los productos de la categoría seleccionada (Electrónica, Alimentos, Ropa, Hogar, Deportes, Papelería).
-- **Mostrar los N más económicos o costosos:** ordena por precio con QuickSort y muestra los primeros o últimos N productos según la elección del usuario.
+## 📋 Description
 
-## Algoritmos implementados
+The program loads a database of **120 products** from a text file and allows the user to perform **searching, sorting, and filtering** through an interactive menu.
 
-| Algoritmo | Uso | Complejidad promedio |
-|---|---|---|
-| QuickSort (pivote central) | Ordenamiento por nombre y precio | O(n log n) |
-| Búsqueda binaria | Búsqueda por nombre | O(log n) |
-| Recorrido lineal | Filtrado por categoría | O(n) |
+---
 
-## Estructura de datos
+## ⚙️ Features
 
-```cpp
-struct Producto {
-    string nombre;
-    double precio;
-    string categoria;
+* **Search product by name:** sorts the catalog alphabetically using **QuickSort** and locates the product using **binary search**. The search is case-insensitive.
+* **Sort products by name or price:** uses **QuickSort** to sort the entire catalog alphabetically (A→Z) or by price (lowest to highest).
+* **Filter by category:** iterates through the catalog and displays only products from the selected category (Electronics, Food, Clothing, Home, Sports, Stationery).
+* **Show top N cheapest or most expensive products:** sorts by price using QuickSort and displays the first or last N products depending on the user’s choice.
+
+---
+
+## 🧠 Algorithms Implemented
+
+| Algorithm                | Use                       | Average Complexity |
+| ------------------------ | ------------------------- | ------------------ |
+| QuickSort (middle pivot) | Sorting by name and price | O(n log n)         |
+| Binary Search            | Search by name            | O(log n)           |
+| Linear Traversal         | Category filtering        | O(n)               |
+
+---
+
+## 🏗️ Data Structure
+
+```cpp id="c5k6kt"
+struct Product {
+    string name;
+    double price;
+    string category;
 };
 ```
 
-Los productos se almacenan en un `vector<Producto>` por su acceso directo en O(1), compatibilidad con QuickSort y tamaño dinámico.
+Products are stored in a `vector<Product>` due to:
 
-## Formato del archivo de datos
+* O(1) direct access
+* Compatibility with QuickSort
+* Dynamic size
 
-El archivo `productos.txt` contiene 120 productos con el formato:
+---
 
-```
-Nombre|Precio|Categoria
-```
+## 📄 Data File Format
 
-Distribuidos equitativamente en 6 categorías: Electrónica, Alimentos, Ropa, Hogar, Deportes y Papelería.
+The `productos.txt` file contains 120 products with the following format:
 
-## Cómo ejecutar
-
-1. Clonar el repositorio
-2. Asegurarse de que `productos.txt` esté en la misma carpeta que el ejecutable
-3. Compilar y ejecutar:
-
-```bash
-g++ -o tienda main.cpp
-./tienda
+```id="fdg3q6"
+Name|Price|Category
 ```
 
-## Tecnologías
+They are evenly distributed across 6 categories:
 
-- C++
-- STL (vector, string, fstream, sstream)
+* Electronics
+* Food
+* Clothing
+* Home
+* Sports
+* Stationery
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repository
+2. Make sure `productos.txt` is in the same folder as the executable
+3. Compile and run:
+
+```bash id="szpk5o"
+g++ -o store main.cpp
+./store
+```
+
+---
+
+## 🛠️ Technologies
+
+* **C++**
+* **STL** (`vector`, `string`, `fstream`, `sstream`)
+
+---
